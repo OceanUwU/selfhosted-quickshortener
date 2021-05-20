@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QuickShortener</title>
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {
+                min-width: 400px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>QuickShortener</h1>
+        
+        <label for="source">Source URL (<span id="host"></span>[source])</label>
+        <input id="source" class="form-control">
+
+        <label for="destination">Destination URL</label>
+        <input id="destination" class="form-control">
+
+        <br>
+        <button id="generate" class="btn btn-primary">Shorten</button>
+        <hr>
+
+        <input class="form-control" id="link">
+        <p id="success" class="text-muted"></p>
+
+        <script src="jquery-3.6.0.min.js"></script>
+        <script src="bootstrap.bundle.min.js"></script>
+        <script src="popup.js"></script>
+    </body>
+</html>

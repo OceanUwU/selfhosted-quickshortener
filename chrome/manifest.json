@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+  
+    "name": "QuickShortener",
+    "description": "Using your own self-hosted server, create a shortened link and copy it to your clipboard at the click of a button.",
+    "version": "1.0",
+  
+    "browser_action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": false
+    },
+    
+    "permissions": [
+        "activeTab",
+        "storage"
+    ]
+}

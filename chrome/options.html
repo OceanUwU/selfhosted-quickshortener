@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>QuickShortener Config</title>
+        <link href="bootstrap.min.css" rel="stylesheet">
+        <style>
+            body {
+                min-width: 600px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>QuickShortener Config</h1>
+
+        <label for="host">Host</label>
+        <input id="host" class="form-control" placeholder="E.g. https://links.example.com/ (include the trailing slash)">
+
+        <label for="key">Key</label>
+        <input id="key" class="form-control" placeholder="The key you set in server/cfg.json">
+
+        <br>
+        <button id="save" class="btn btn-primary">Save</button>
+        <p id="status" class="text-muted"></p>
+
+        <script src="jquery-3.6.0.min.js"></script>
+        <script src="bootstrap.bundle.min.js"></script>
+        <script src="options.js"></script>
+    </body>
+</html>
