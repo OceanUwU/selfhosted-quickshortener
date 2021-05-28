@@ -1,7 +1,7 @@
 function generate() {
     chrome.storage.sync.get(['host', 'key'], options => {
         $('#link').val('Generating link...');
-        $.post(`${options.host}api/create`, {
+        $.post(`${options.host}/api/create`, {
             k: options.key,
             f: $('#source').val(),
             t: $('#destination').val(),
@@ -9,7 +9,7 @@ function generate() {
             if (data === false) {
                 alert('Invalid key specified in options!');
             } else {
-                $('#link').val(data);
+                $('#link').val(`${options.host}/${data}`);
                 $('#link')[0].select();
                 if (document.execCommand('copy')) {
                     $('#success').text('Copied to clipboard!');
@@ -35,11 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
         $('#host').text(options.host);
     });
 
-    chrome.tabs.getSelected(null, tab => { //firefox: browser.tabs.query({active: true, windowId: browser.windows.WINDOW_ID_CURRENT}).then(tabs => browser.tabs.get(tabs[0].id)).then(tab => {
+    let shortenCurrentTab = tab => { //firefox: 
         $('#source').val('generateRandomLink');
         $('#destination').val(tab.url);
         generate();
 
         $('#generate').click(generate);
-    });
+    }
+
+    if (chrome.tabs && chrome.tabs.getSelected) chrome.tabs.getSelected(null, shortenCurrentTab); //run shortenCurrentTab (chrome)
+    else browser.tabs.query({active: true, windowId: browser.windows.WINDOW_ID_CURRENT}).then(tabs => browser.tabs.get(tabs[0].id)).then(shortenCurrentTab); //run shortenCurrentTab (firefox)
 }, false);

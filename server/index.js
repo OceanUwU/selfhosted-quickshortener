@@ -10,7 +10,7 @@ var app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(require('cors')());
 
-app.post('/api/create', async (req, res) => { //$.post('/api/create', {k:'v3uSzCuahqA7v22i',f:'',t:'https://ocean.lol'}, result => {console.log(result)});
+app.post('/api/create', async (req, res) => {
     if (req.body.k !== cfg.key)
         return res.json(false);
     
@@ -28,11 +28,11 @@ app.post('/api/create', async (req, res) => { //$.post('/api/create', {k:'v3uSzC
     }
 
     await db.Link.create({from, to});
-    res.json(`${cfg.host}${from}`);
+    res.json(from);
 });
 
 app.get('/*', async (req, res) => {
-    let from = req._parsedUrl.href.slice(1)
+    let from = req._parsedUrl.href.slice(1);
     let link = await db.Link.findOne({where: {from}});
     if (link == null)
         res.send(`"/${from}" is not a shortened link`);
