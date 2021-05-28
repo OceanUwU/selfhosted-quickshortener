@@ -4,7 +4,6 @@ const bodyParser = require('body-parser')
 const cfg = require('./cfg');
 const db = require('./models');
 const alphabet = '123456789abcdefghijkmnpqrstuvwxyz';
-const length = 4;
 
 var app = express();
 app.use(bodyParser.urlencoded({extended: true}));

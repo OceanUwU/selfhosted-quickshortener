@@ -2,3 +2,6 @@ server/cfg.json
 server/node_modules
 server/data.db
 extension.zip
+
+php-server/data.db
+php-server/cfg.php

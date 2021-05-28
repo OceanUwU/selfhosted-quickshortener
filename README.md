@@ -10,7 +10,7 @@
     {
         "port": 8469,
         "randomLength": 4, //how long should random urls be?
-        "key": "v3uSzCuahqA7v22i" //https://www.random.org/strings/?num=16&len=16&digits=on&upperalpha=on&loweralpha=on&unique=on&format=html&rnd=new
+        "key": "v3uSzCuahqA7v22i" //https://www.random.org/strings/?num=1&len=16&digits=on&upperalpha=on&loweralpha=on&unique=on&format=html&rnd=new
     }
     ```
     and edit them to your needs (also remove the comments).
