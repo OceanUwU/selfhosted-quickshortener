@@ -8,7 +8,6 @@ header('Access-Control-Allow-Origin: *');
 
 $path = substr($_SERVER['REQUEST_URI'], 1);
 if ($path == 'api/create' && array_key_exists('f', $_POST) && array_key_exists('t', $_POST) && array_key_exists('k', $_POST)) {
-    error_log(':)');
     header('Content-Type: application/json');
 
     if ($_POST['k'] !== $key) {
