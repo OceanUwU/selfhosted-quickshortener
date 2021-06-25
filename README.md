@@ -23,7 +23,7 @@
 (will do once extension is reviewed)
 
 ### Firefox
-1. [Download the add-on](https://addons.mozilla.org/firefox/downloads/file/3783540/quickshortener-1.1.0-fx.xpi)
+1. [Download the add-on](https://github.com/OceanUwU/selfhosted-quickshortener/releases/download/v1.1.0/quickshortener-1.1.0-fx.xpi)
 2. Right click the extension icon in the top right of firefox
 3. Click "Manage Extension"
 4. Choose the "Options" tab
